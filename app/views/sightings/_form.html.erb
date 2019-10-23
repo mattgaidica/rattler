@@ -1,0 +1,32 @@
+<%= form_with(model: sighting, local: true) do |form| %>
+  <% if sighting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sighting.errors.count, "error") %> prohibited this sighting from being saved:</h2>
+
+      <ul>
+        <% sighting.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :squirrel_id %>
+    <%= form.text_field :squirrel_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location_id %>
+    <%= form.text_field :location_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :project_id %>
+    <%= form.text_field :project_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
