@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_23_153528) do
+ActiveRecord::Schema.define(version: 2019_10_23_180733) do
 
   create_table "locations", force: :cascade do |t|
     t.decimal "lat", precision: 10, scale: 6
-    t.decimal "lng", precision: 10, scale: 6
+    t.decimal "lon", precision: 10, scale: 6
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -33,13 +33,16 @@ ActiveRecord::Schema.define(version: 2019_10_23_153528) do
     t.integer "location_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "api_key"
     t.index ["location_id"], name: "index_projects_on_location_id"
   end
 
   create_table "sightings", force: :cascade do |t|
-    t.integer "squirrel_id", null: false
-    t.integer "location_id", null: false
+    t.string "name", null: false
+    t.integer "squirrel_id"
+    t.integer "location_id"
     t.integer "project_id", null: false
+    t.datetime "sighted_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["location_id"], name: "index_sightings_on_location_id"

@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   resources :squirrels
   resources :projects
   resources :locations
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
+  get '/import_gpx', to: 'application#import_gpx', as: 'import_gpx'
+  get '/map', to: 'maps#heat', as: 'maps_heat'
 end

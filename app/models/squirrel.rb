@@ -1,3 +1,3 @@
 class Squirrel < ApplicationRecord
-	belongs_to :sighting
+	belongs_to :sighting, optional: true
 end

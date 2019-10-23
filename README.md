@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Garmin Explore Maps] (https://us0.inreach.garmin.com/Map)
 
-Things you may want to cover:
+[Add markers](https://developers-dot-devsite-v2-prod.appspot.com/maps/documentation/javascript/examples/marker-simple)
 
-* Ruby version
+Date format: 2019-10-23 15:19:44
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Start Over
+---
+rake db:reset
+loc = Location.create(lat: 42.322142, lon: -83.707065)
+proj = Project.create(name: 'ARBO', location_id: loc.id, api_key: "XXX")
