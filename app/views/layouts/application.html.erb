@@ -19,30 +19,31 @@
   </head>
 
   <body>
+
     <div class="container">
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="<%= projects_path %>" disabled>Rattler</a>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand disabled" href="<%= projects_path %>" disabled>Rattler</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class=""><a href="<%= projects_path %>">Projects</a></li>
+              <li><a href="<%= sightings_path %>">Sightings</a></li>
+              <li><a href="<%= locations_path %>">Locations</a></li>
+              <li><a href="<%= squirrels_path %>">Squirrels</a></li>
+              <li><a href="/map">Map</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class=""><a href="<%= projects_path %>">Projects</a></li>
-            <li><a href="<%= sightings_path %>">Sightings</a></li>
-            <li><a href="<%= locations_path %>">Locations</a></li>
-            <li><a href="<%= squirrels_path %>">Squirrels</a></li>
-            <li><a href="/map">Map</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-  </div>
+      </nav>
+    </div>
     <%= yield %>
   </body>
 </html>
