@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_23_180733) do
+ActiveRecord::Schema.define(version: 2019_11_25_141151) do
 
   create_table "locations", force: :cascade do |t|
     t.decimal "lat", precision: 10, scale: 6
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2019_10_23_180733) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "sex"
   end
 
   add_foreign_key "project_sightings", "projects"
